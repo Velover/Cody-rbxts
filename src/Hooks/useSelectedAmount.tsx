@@ -15,10 +15,11 @@ export function useSelectedAmount() {
 				}
 			}
 
-			SetAmount(selected.size());
+			SetAmount(instances.size());
 		};
 
-		const connection = (Selection as Selection & ChangedSignal).Changed.Connect(() => {
+		type SelectionService = typeof Selection & { SelectionChanged: RBXScriptSignal };
+		const connection = (Selection as SelectionService).SelectionChanged.Connect(() => {
 			OnSelectionChanged();
 		});
 

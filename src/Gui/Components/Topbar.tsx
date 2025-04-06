@@ -17,7 +17,7 @@ export default function Topbar() {
 				key={"Title"}
 				BackgroundTransparency={1}
 				Size={new UDim2(0.7, 0, 0.0, 24)}
-				FontFace={GuiResources.FONT}
+				FontFace={GuiResources.FONT_BOLD}
 				Text={"Instance Codifier"}
 				TextColor3={new Color3(0.0392157, 0.0392157, 0.0392157)}
 				TextSize={18}
@@ -27,7 +27,7 @@ export default function Topbar() {
 				BackgroundTransparency={1}
 				Position={UDim2.fromScale(0.7, 0.0)}
 				Size={new UDim2(0.3, 0, 0.0, 24)}
-				FontFace={GuiResources.FONT}
+				FontFace={GuiResources.FONT_REGULAR}
 				Text={`${selected_amount} Selected`}
 				TextColor3={new Color3(0.392157, 0.392157, 0.392157)}
 				TextSize={14}

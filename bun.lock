@@ -4,6 +4,7 @@
     "": {
       "name": "cody",
       "dependencies": {
+        "@rbxts/api-dump-fetcher": "^1.0.2",
         "@rbxts/react": "^17.2.3",
         "@rbxts/react-roblox": "^17.2.3",
         "@rbxts/services": "^1.5.5",
@@ -46,6 +47,10 @@
 
     "@pkgr/core": ["@pkgr/core@0.2.0", "", {}, "sha512-vsJDAkYR6qCPu+ioGScGiMYR7LvZYIXh/dlQeviqoTWNCVfKTLYD/LkNWH4Mxsv2a5vpIRc77FN5DnmK1eBggQ=="],
 
+    "@rbxts/api-dump-fetcher": ["@rbxts/api-dump-fetcher@1.0.2", "", { "dependencies": { "@rbxts/base64": "^1.0.0", "@rbxts/services": "^1.5.5", "@rbxts/zlib": "^1.0.1" } }, "sha512-mIcQKJCdqZYzeLOMscxqsXGerpnIWQZOgZElc+FFYARSbMwtQyRIvAT2LrBh0gyHXLKHfoeGa9Byw/R9q4FxbA=="],
+
+    "@rbxts/base64": ["@rbxts/base64@1.0.0", "", {}, "sha512-X965qYiY0Bc7zwgn7A0guGpnCvehcmITfl7CGS5Mxhr9bbia/SO8yZpvbFC1C79vPCf6Oc3p+O3nmNJqubMWwA=="],
+
     "@rbxts/compiler-types": ["@rbxts/compiler-types@3.0.0-types.0", "", {}, "sha512-VGOHJPoL7+56NTatMGqQj3K7xWuzEV+aP4QD5vZiHu+bcff3kiTmtoadaF6NkJrmwfFAvbsd4Dg764ZjWNceag=="],
 
     "@rbxts/react": ["@rbxts/react@17.2.3", "", { "dependencies": { "@rbxts/react-vendor": "17.2.3" } }, "sha512-IoOB8e2W8MxT0MKWFf0Ls0vT61ImYL6ctHQgz5+oazma6z8bqFtJjgPxOuy6jmMSuyfBe7rYp/muou0kIjZT+Q=="],
@@ -57,6 +62,8 @@
     "@rbxts/services": ["@rbxts/services@1.5.5", "", {}, "sha512-Hu7QH2ecefS60zpakKG3T2vgABydoOJqpSG7nXr59wFAbPk/cA+OcsntYPHUWyHAat0VFGZ5jNZLTLdiqfssvg=="],
 
     "@rbxts/types": ["@rbxts/types@1.0.845", "", {}, "sha512-bSoxCX0Shw7IIfuaJRaWBLx6mq9zn2K6AufDfsv5T58CP4HJBDIEBG5wso6pUFiQs19k5+nGdYphDCPGFNl8KA=="],
+
+    "@rbxts/zlib": ["@rbxts/zlib@1.0.1", "", {}, "sha512-vw1pC0Wk6mo4wSiHi6FOAc+sH1XBXSAAs/PbCLObYhbYlP5O5zL0nHxFnQaIzdod8R/ZNhdkdpaq7iym2hXZwQ=="],
 
     "@roblox-ts/luau-ast": ["@roblox-ts/luau-ast@2.0.0", "", {}, "sha512-cmMi093IdwBOLVxwuordhM8AmtbyTIyRpsTbB0D/JauidW4SXsQRQowSwWjHo4QP0DRJBXvOIlxtqEQi50uNzQ=="],
 

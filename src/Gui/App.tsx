@@ -1,5 +1,6 @@
 import React from "@rbxts/react";
-import { GuiResources } from "./Resources/GuiResources";
+import Body from "./Components/Body";
+import Topbar from "./Components/Topbar";
 
 export default function App() {
 	return (
@@ -27,6 +28,8 @@ export default function App() {
 					<uicorner CornerRadius={new UDim(0.0, 6)} />
 					<uilistlayout SortOrder={Enum.SortOrder.LayoutOrder} />
 					<uistroke Color={new Color3(0.901961, 0.901961, 0.901961)} />
+					<Topbar />
+					<Body />
 				</frame>
 			</scrollingframe>
 		</frame>

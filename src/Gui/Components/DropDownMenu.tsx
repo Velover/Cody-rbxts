@@ -1,30 +1,63 @@
-import React from "@rbxts/react";
+import React, { useState } from "@rbxts/react";
 import { GuiResources } from "../Resources/GuiResources";
 
-function Option({ Name }: { Name: string }) {
+function Option({
+	SelectedOption,
+	OptionName,
+	SetChosen,
+	SetSelected,
+}: {
+	OptionName: string;
+	SelectedOption: string;
+	SetSelected: (option: string) => void;
+	SetChosen: (option: string) => void;
+}) {
 	return (
 		<textbutton
-			LayoutOrder={1}
+			BackgroundColor3={new Color3(1, 1, 1)}
+			BorderColor3={new Color3(0, 0, 0)}
+			BorderSizePixel={0}
 			Size={new UDim2(1.0, 0, 0.0, 24)}
-			ZIndex={11}
-			Position={UDim2.fromOffset(24, 0)}
-			FontFace={GuiResources.FONT}
-			Text={Name}
-			TextColor3={new Color3(0.0392157, 0.0392157, 0.0392157)}
+			ZIndex={GuiResources.DROP_DOWN_MENU_ITEMS_ZINDEX}
+			FontFace={GuiResources.FONT_REGULAR}
+			TextColor3={new Color3(0, 0, 0)}
 			TextSize={14}
-			TextWrapped={true}
 			TextXAlignment={Enum.TextXAlignment.Left}
-		></textbutton>
+			Event={{
+				MouseButton1Click: () => {
+					SetChosen(SelectedOption);
+				},
+				MouseEnter: () => {
+					SetSelected(SelectedOption);
+				},
+			}}
+		>
+			<uipadding PaddingLeft={new UDim(0.0, 5)} />
+			<uistroke
+				Enabled={SelectedOption === OptionName}
+				ApplyStrokeMode={Enum.ApplyStrokeMode.Border}
+				Color={new Color3(0.231373, 0.509804, 0.964706)}
+			/>
+		</textbutton>
 	);
 }
 
-export function DropDownMenu() {
+export function DropDownMenu({
+	ChosenOption,
+	Options,
+	SetChosen: SetChosen,
+}: {
+	ChosenOption: string;
+	Options: string[];
+	SetChosen: (option: string) => void;
+}) {
+	const [selected_option, SetSelected] = useState(ChosenOption);
 	return (
 		<textbutton
 			BackgroundColor3={new Color3(1, 1, 1)}
 			LayoutOrder={2}
 			Size={new UDim2(1.0, 0, 0.0, 36)}
-			FontFace={GuiResources.FONT}
+			FontFace={GuiResources.FONT_REGULAR}
 			Text={"Configure Rules"}
 			TextColor3={new Color3(0.0392157, 0.0392157, 0.0392157)}
 			TextSize={14}
@@ -36,6 +69,7 @@ export function DropDownMenu() {
 				ApplyStrokeMode={Enum.ApplyStrokeMode.Border}
 				Color={new Color3(0.901961, 0.901961, 0.901961)}
 			/>
+
 			<imagelabel
 				key={"DropDown Arrow"}
 				BackgroundTransparency={1}
@@ -53,7 +87,24 @@ export function DropDownMenu() {
 				Size={new UDim2(1.0, 12, 0.0, 0)}
 				Visible={false}
 				ZIndex={10}
-			/>
+			>
+				<uilistlayout SortOrder={Enum.SortOrder.LayoutOrder} />
+				<uipadding
+					PaddingBottom={new UDim(0.0, 8)}
+					PaddingLeft={new UDim(0.0, 8)}
+					PaddingRight={new UDim(0.0, 8)}
+					PaddingTop={new UDim(0.0, 8)}
+				/>
+				<uistroke Color={new Color3(0.901961, 0.901961, 0.901961)} />
+				{Options.map((option) => (
+					<Option
+						OptionName={option}
+						SelectedOption={selected_option}
+						SetSelected={SetSelected}
+						SetChosen={SetChosen}
+					/>
+				))}
+			</frame>
 		</textbutton>
 	);
 }
