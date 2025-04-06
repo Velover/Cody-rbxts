@@ -1,8 +1,7 @@
 import { LoadApiDump } from "@rbxts/api-dump-fetcher";
-LoadApiDump(plugin).expect();
-
 import React from "@rbxts/react";
 import { createRoot } from "@rbxts/react-roblox";
+import { InstanceTools } from "@rbxts/tool_pack";
 import App from "./Gui/App";
 
 const toolbar = plugin.CreateToolbar("Cody-toolbar");
@@ -18,6 +17,22 @@ const widget = plugin.CreateDockWidgetPluginGui(
 );
 
 widget["Title" as never] = "Cody" as never;
+
+LoadApiDump(plugin)
+	.then(() => {
+		button.SetActive(true);
+	})
+	.catch(() => {
+		warn("Failed to load API dump");
+		InstanceTools.Create("TextLabel", {
+			Text: "Failed to load API dump",
+			Parent: widget,
+			Size: new UDim2(1, 0, 1, 0),
+			BackgroundTransparency: 1,
+			TextColor3: Color3.fromRGB(255, 0, 0),
+			TextScaled: true,
+		});
+	});
 
 const root = createRoot(widget);
 root.render(React.createElement(App));

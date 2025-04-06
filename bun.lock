@@ -8,6 +8,7 @@
         "@rbxts/react": "^17.2.3",
         "@rbxts/react-roblox": "^17.2.3",
         "@rbxts/services": "^1.5.5",
+        "@rbxts/tool_pack": "^2.1.9",
       },
       "devDependencies": {
         "@rbxts/compiler-types": "^3.0.0-types.0",
@@ -60,6 +61,8 @@
     "@rbxts/react-vendor": ["@rbxts/react-vendor@17.2.3", "", {}, "sha512-dWCiVelvTK6h920geaFH/OQ5zoWHyhyqyfH51hKx2/iVZ6OiiyNVJ5UqEIkJMG4HsJ8JnkTORizV3+MtQ41BtA=="],
 
     "@rbxts/services": ["@rbxts/services@1.5.5", "", {}, "sha512-Hu7QH2ecefS60zpakKG3T2vgABydoOJqpSG7nXr59wFAbPk/cA+OcsntYPHUWyHAat0VFGZ5jNZLTLdiqfssvg=="],
+
+    "@rbxts/tool_pack": ["@rbxts/tool_pack@2.1.9", "", { "dependencies": { "@rbxts/services": "^1.5.5" } }, "sha512-bJK/eRC25mthILkuqE86e9i34ZU4jTASQ5NXxYLRjNW3xOuUZWcGvUwNlV0K0NOxvnzVeGeuz2Sqx6+eMBPgdg=="],
 
     "@rbxts/types": ["@rbxts/types@1.0.845", "", {}, "sha512-bSoxCX0Shw7IIfuaJRaWBLx6mq9zn2K6AufDfsv5T58CP4HJBDIEBG5wso6pUFiQs19k5+nGdYphDCPGFNl8KA=="],
 
